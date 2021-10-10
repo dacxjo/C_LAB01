@@ -3,19 +3,17 @@
 #include <math.h>
 int main(void) {
     int n;
-    float a, b, x0, y0, x1, y1, t, aux0, aux1;
-
-    a = 1.f;
-    b = 1.f;
-    x0 = 0.3f;
+    float a, b, x0, y0,  y1, t, aux0, aux1;
+    printf("Enter a, b, and x0:\n");
+    scanf("%f %f %f",&a,&b,&x0);
     aux0 = x0 / a;
     y0 = b * sqrt(1.f - aux0*aux0);
     aux1 = y0 / b;
     printf("%3s %18s\n","#n","t");
     t = aux0*aux0 + aux1*aux1;
     printf("%3d %18.6e\n", 0, t);
-
     for (n = 1; n <= 30; n++) {
+        float x1;
         aux0 = x0 / a;
         aux1 = y0 / b;
         x1 = 2.f*x0*y0 / b;
